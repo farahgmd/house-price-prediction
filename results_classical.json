@@ -1,0 +1,29 @@
+{
+  "target": "log1p(SalePrice)",
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42
+  },
+  "cv": {
+    "n_splits": 5,
+    "shuffle": true,
+    "random_state": 42
+  },
+  "models": {
+    "ridge": {
+      "best_params": {
+        "model__alpha": 0.1
+      },
+      "cv_rmse": 0.152557620620292,
+      "test_rmse": 0.14838753738716826
+    },
+    "random_forest": {
+      "best_params": {
+        "model__max_depth": null,
+        "model__n_estimators": 200
+      },
+      "cv_rmse": 0.1473331479255884,
+      "test_rmse": 0.14781773288757163
+    }
+  }
+}
