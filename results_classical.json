@@ -22,8 +22,8 @@
         "model__max_depth": null,
         "model__n_estimators": 200
       },
-      "cv_rmse": 0.1473331479255884,
-      "test_rmse": 0.14781773288757163
+      "cv_rmse": 0.14733314792558844,
+      "test_rmse": 0.1478177328875717
     }
   }
 }

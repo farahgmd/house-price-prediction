@@ -1,0 +1,10 @@
+{
+  "model": "MLP (Keras)",
+  "target": "log1p(SalePrice)",
+  "test_rmse": 0.37199114660654004,
+  "custom": "RMSEMetric (custom Keras metric)",
+  "early_stopping": {
+    "patience": 15,
+    "restore_best_weights": true
+  }
+}
