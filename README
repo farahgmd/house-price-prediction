@@ -1,1 +1,101 @@
+Prédiction du prix des maisons
 
+Ce projet a pour objectif de prédire le prix de vente de maisons à l’aide de techniques de machine learning.
+Le modèle est entraîné à partir du jeu de données House Prices – Advanced Regression Techniques, qui contient de nombreuses caractéristiques décrivant des maisons situées à Ames (Iowa, États-Unis).
+
+L’objectif est de construire un modèle capable d’estimer le prix de vente d’un bien immobilier (SalePrice) à partir de ses caractéristiques structurelles et qualitatives.
+
+Structure du projet
+
+house-price-prediction
+│
+├── data
+│   ├── train.csv
+│   ├── test.csv
+│
+├── eda
+│   └── eda.ipynb
+│
+├── src
+│   ├── preprocess.py
+│   ├── train_classical.py
+│   ├── train_dl_keras.py
+│   └── feature_importance.py
+│
+├── feature_importance.csv
+├── results_classical.json
+├── results_dl.json
+├── requirements.txt
+
+Jeu de données
+
+Le dataset contient 1460 observations et 81 variables, décrivant différentes caractéristiques des maisons :
+
+surface du terrain
+surface habitable
+qualité de construction
+année de construction
+présence de garage, sous-sol, etc.
+
+La variable cible est :
+SalePrice : prix de vente final de la maison.
+
+Méthodologie
+
+Le projet suit les étapes classiques d’un pipeline de machine learning :
+
+1. Analyse exploratoire des données (EDA)
+
+analyse de la distribution de la variable cible
+identification des valeurs manquantes
+analyse des corrélations entre les variables
+
+2. Prétraitement des données
+
+gestion des valeurs manquantes
+transformation des variables catégorielles
+transformation logarithmique de la variable cible log1p(SalePrice)
+
+3. Entraînement des modèles
+
+Plusieurs modèles ont été testés :
+
+Ridge Regression
+Random Forest Regressor
+Réseau de neurones (MLP avec Keras)
+
+4. Évaluation des modèles
+
+Les performances des modèles sont évaluées à l’aide de la métrique :
+
+RMSE (Root Mean Squared Error)
+Une validation croisée à 5 plis est utilisée pour estimer la robustesse des modèles.
+
+Résultats
+
+Le modèle Random Forest obtient les meilleures performances parmi les modèles classiques testés.
+L’analyse de l’importance des variables montre que les caractéristiques les plus influentes dans la prédiction du prix sont :
+
+OverallQual (qualité globale de la maison)
+GrLivArea (surface habitable)
+TotalBsmtSF (surface du sous-sol)
+GarageCars (nombre de places de garage)
+
+Technologies utilisées
+
+Python
+Pandas
+NumPy
+Scikit-learn
+Matplotlib
+Seaborn
+TensorFlow / Keras
+
+Objectif pédagogique
+
+Ce projet a été réalisé dans le cadre d’un projet académique en machine learning, avec pour objectif de mettre en pratique les différentes étapes d’un projet de science des données :
+
+exploration des données
+préparation des données
+entraînement et comparaison de modèles
+interprétation des résultats.
